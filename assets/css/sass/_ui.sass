@@ -1,0 +1,92 @@
+@import 'constants'
+@import 'compass/css3'
+
+.label
+  color: #555555
+  text-transform: uppercase
+
+.btn 
+  @extend .label
+  text-decoration: none 
+  background-color: $color-bg-grey
+  padding: $space/2
+  border-radius: $space/4
+  display: inline-block
+  font-weight: normal
+
+.btn-default
+  font-size: 0.8em
+
+.btn-clean
+  color: $color-text-grey
+  background-color: transparent
+
+.btn-active-teal
+  background-color: $color-primary
+  color: white
+.btn-active-blue
+  background-color: $color-primary
+  color: white
+
+.btn-side
+  padding: $space/2
+  margin: -$space/2
+  margin-left: -5px
+  float: right
+
+input, textarea
+  @extend .label
+  font-size: 0.8em
+  border: 1px solid transparent
+  background-color: transparent
+  border-bottom: $simple-border
+
+.ui-checkbox
+  $height: 16px 
+  $label-size: 22px
+  width: 40px
+  height: $height
+  background-color: #ddd
+  margin: 0 $space/2
+  border-radius: 20px
+  position: relative
+  display: inline-block
+  label 
+    display: block 
+    width: $label-size
+    height: $label-size
+    border-radius: 50%
+    top: -($label-size - $height)/2
+    left: 0px
+    background-color: #fbfbfb
+    box-shadow: 2px 1px 1px 1px rgba(#aaa, 0.3)
+    position: absolute
+    cursor: pointer
+    z-index: 2
+    @include transition(background-color .3s ease-in-out, left .3s ease-in-out)
+    &:before
+      background-color: transparent
+      @include transition-delay(0s)
+      z-index: 1
+      width: 40px
+      height: $height
+      margin-right: $space/2
+      border-radius: 20px
+      content: ''
+      display: block 
+      position: absolute
+      top: 2px
+      left: 0px
+    &.disabled
+      background-color: #efefef
+
+  input[type='checkbox']
+    visibility: hidden
+    &:checked + label
+      left: 20px
+      background-color: $color-primary
+      box-shadow: -1px 1px 1px 1px rgba(#aaa, 0.4)
+      &:before
+        @include transition-delay(.3s)
+        background-color: rgba($color-primary, 0.4)
+        left: -42px + $label-size

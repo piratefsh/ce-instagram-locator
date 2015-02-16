@@ -1,0 +1,19 @@
+@import 'constants'
+
+*
+  box-sizing: border-box
+
+body
+  color: $color-text
+
+h1, h2, h3, h4
+  font-family: $heading-fonts
+  font-weight: normal
+
+.container 
+  max-width: $container-width
+  margin: 0 auto
+
+.wrapper
+  @include span(12 of 12)
+
