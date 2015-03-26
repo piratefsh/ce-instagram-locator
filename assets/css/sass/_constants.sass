@@ -30,11 +30,28 @@ $simple-border: 1px solid #bbb
 $simple-box-shadow: 1px 1px 1px 1px rgba(#aaa, 0.4)
 
 // mixins
-@mixin clear-list
-    list-style-type: none 
-    margin: 0px
+@mixin clear-spacing
+    margin: 0px 
     padding: 0px
 
+@mixin clear-list
+    @include clear-spacing
+    list-style-type: none 
+
+@mixin bg-cover
+    background-position: center
+    background-size: cover
+
+@mixin clear-both
+    content: ''
+    display: block
+    clear: both 
+
+@mixin center-in-parent
+    @include translate(-50%, -50%)
+    left: 50%
+    top: 50%
+    position: absolute
 // utility classes
 .col-2 
     @include span(6 of 12)
