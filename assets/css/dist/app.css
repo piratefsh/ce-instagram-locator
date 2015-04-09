@@ -178,7 +178,7 @@ form {
     display: block;
     clear: both; }
   .list-feature li {
-    max-height: 500px;
+    height: 600px;
     width: 31.66667%;
     float: left;
     margin-left: 0.83333%;
