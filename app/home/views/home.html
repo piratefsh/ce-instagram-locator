@@ -1,2 +1,24 @@
 <h1>Hello world</h1>
 <p>Today is {{now | date}}!</p>
+<form>
+    <fieldset>
+        <label>Latitude: </label><input ng-model="lat"/>
+    </fieldset>
+
+    <fieldset>
+        <label>Longitude: </label><input ng-model="lng"/>
+    </fieldset>
+
+    <fieldset>
+        <button ng-click="search()">Go</button>
+    </fieldset>
+</form>
+<ul class="list-feature">
+    <li ng-repeat="post in posts">
+        <img ng-src="{{post.images.standard_resolution.url}}"/>
+        <p>
+            <!-- {{post.caption.text}} -->
+            {{post.created_time*1000 | date:'dd MMM, yyyy - hh:mm a' }}
+        </p>
+    </li>
+</ul>

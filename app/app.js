@@ -7,7 +7,7 @@ var directives = angular.module('app.directives', []);
 // var services = angular.module('app.services', []);
 var dashboard = angular.module('app', 
   ['app.controllers', 'app.factories', 'app.models', 'app.directives',
-  'ngRoute']);
+  'ngRoute', 'ngResource']);
 
 angular.module('app').config(['$routeProvider', function($routeProvider){
   $routeProvider

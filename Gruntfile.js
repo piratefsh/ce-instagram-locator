@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-route/angular-route.min.js',
+                    'bower_components/angular-resource/angular-resource.min.js',
                 ],
                 dest: 'assets/js/dist/dependencies.js'
             },
@@ -51,7 +52,8 @@ module.exports = function(grunt) {
                         flatten: true,
                         src: [
                             'bower_components/angular/angular.min.js.map',
-                            'bower_components/angular-route/angular-route.min.js.map'
+                            'bower_components/angular-route/angular-route.min.js.map',
+                            'bower_components/angular-resource/angular-resource.min.js.map'
                             ], 
                         dest: 'assets/js/dist/'
                     }

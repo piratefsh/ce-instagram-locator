@@ -41,6 +41,12 @@ input, textarea
   background-color: transparent
   border-bottom: $simple-border
 
+form 
+  margin: $space auto
+  fieldset
+    margin: $space auto
+    display: inline-block
+    padding: $space/2
 .ui-checkbox
   $height: 16px 
   $label-size: 22px
@@ -98,13 +104,30 @@ input, textarea
   font-size: 0.8em
   color: $color-text-grey-light
   &.fullscreen 
-      background-color: rgba(white, 0.9)
-      top: 0px 
-      position: fixed 
-      z-index: 10
-      width: 100%
-      height: 100vh
-      > div 
-          @include center-in-parent
+    background-color: rgba(white, 0.9)
+    top: 0px 
+    position: fixed 
+    z-index: 10
+    width: 100%
+    height: 100vh
+    > div 
+      @include center-in-parent
   .fa 
-      font-size: 45px 
+    font-size: 45px 
+
+.list-feature
+  @include clear-spacing
+  list-style-type: none
+  &:after
+    @include clear-both
+  li 
+    max-height: 500px
+    img 
+      max-width: 100%
+      border: $simple-border
+    @include span(4 of 12)
+    @include breakpoint($md-width)
+      @include span(6 of 12)
+    @include breakpoint($sm-width)
+      @include span(12 of 12)
+

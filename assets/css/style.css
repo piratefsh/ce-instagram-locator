@@ -1,4 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+.col-2 {
+  width: 48.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%; }
+
+.col-3 {
+  width: 31.66667%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%; }
+
+.grey {
+  background-color: #ddd; }
+
 * {
   box-sizing: border-box; }
 
@@ -58,6 +73,13 @@ input, textarea {
   background-color: transparent;
   border-bottom: 1px solid #bbb; }
 
+form {
+  margin: 20px auto; }
+  form fieldset {
+    margin: 20px auto;
+    display: inline-block;
+    padding: 10px; }
+
 .ui-checkbox {
   width: 40px;
   height: 16px;
@@ -113,3 +135,57 @@ input, textarea {
         transition-delay: 0.3s;
         background-color: rgba(0, 128, 128, 0.4);
         left: -20px; }
+
+.loading-indicator {
+  padding: 20px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #ddd; }
+  .loading-indicator.fullscreen {
+    background-color: rgba(255, 255, 255, 0.9);
+    top: 0px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh; }
+    .loading-indicator.fullscreen > div {
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      position: absolute; }
+  .loading-indicator .fa {
+    font-size: 45px; }
+
+.list-feature {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none; }
+  .list-feature:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .list-feature li {
+    max-height: 500px;
+    width: 31.66667%;
+    float: left;
+    margin-left: 0.83333%;
+    margin-right: 0.83333%; }
+    .list-feature li img {
+      max-width: 100%;
+      border: 1px solid #bbb; }
+    @media (max-width: 996px) {
+      .list-feature li {
+        width: 48.33333%;
+        float: left;
+        margin-left: 0.83333%;
+        margin-right: 0.83333%; } }
+    @media (max-width: 768px) {
+      .list-feature li {
+        width: 98.33333%;
+        float: left;
+        margin-left: 0.83333%;
+        margin-right: 0.83333%; } }
