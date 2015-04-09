@@ -8,9 +8,11 @@
     <fieldset>
         <label>Longitude: </label><input ng-model="lng"/>
     </fieldset>
-
     <fieldset>
-        <button ng-click="search()">Go</button>
+        <button ng-click="getMyLocation()">Around Me</button>
+    </fieldset>
+    <fieldset>
+        <input type="submit" ng-click="search()" value="Go"/>
     </fieldset>
 </form>
 <ul class="list-feature">

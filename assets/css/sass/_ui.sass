@@ -36,7 +36,7 @@
 
 input, textarea
   @extend .label
-  font-size: 0.8em
+  font-size: 0.9em
   border: 1px solid transparent
   background-color: transparent
   border-bottom: $simple-border
@@ -44,9 +44,17 @@ input, textarea
 form 
   margin: $space auto
   fieldset
+    border: none
     margin: $space auto
     display: inline-block
     padding: $space/2
+  input, button
+    padding: $space/2
+  button, input[type='submit']
+    color: white
+    border: none 
+    background-color: $color-primary
+    border-radius: $space/3
 .ui-checkbox
   $height: 16px 
   $label-size: 22px

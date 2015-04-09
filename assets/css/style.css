@@ -18,7 +18,8 @@
   box-sizing: border-box; }
 
 body {
-  color: #333333; }
+  color: #333333;
+  background-color: #efefef; }
 
 h1, h2, h3, h4 {
   font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -68,7 +69,7 @@ h1, h2, h3, h4 {
   float: right; }
 
 input, textarea {
-  font-size: 0.8em;
+  font-size: 0.9em;
   border: 1px solid transparent;
   background-color: transparent;
   border-bottom: 1px solid #bbb; }
@@ -76,9 +77,17 @@ input, textarea {
 form {
   margin: 20px auto; }
   form fieldset {
+    border: none;
     margin: 20px auto;
     display: inline-block;
     padding: 10px; }
+  form input, form button {
+    padding: 10px; }
+  form button, form input[type='submit'] {
+    color: white;
+    border: none;
+    background-color: teal;
+    border-radius: 6.66667px; }
 
 .ui-checkbox {
   width: 40px;

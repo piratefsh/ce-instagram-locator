@@ -52,13 +52,27 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
         }
     });
 
-  $scope.search = function(){
-      Posts.getPosts({
-        lat: $scope.lat,
-        lng: $scope.lng
-      }).$promise.then(function(response){
-        $scope.posts = response.data
-      })
-  }
-  
+    $scope.search = function(){
+        Posts.getPosts({
+            lat: $scope.lat,
+            lng: $scope.lng
+        }).$promise.then(function(response){
+            $scope.posts = response.data
+        })
+    }
+
+    $scope.getMyLocation = function(){
+        // find user location
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(location){
+                $scope.lat = location.coords.latitude;
+                $scope.lng = location.coords.longitude;
+                $scope.search();
+            });
+        }
+    }
+
+    $scope.getMyLocation();
+    $scope.search();
+
 }]);
