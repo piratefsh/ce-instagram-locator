@@ -32,8 +32,8 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
         // find user location
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(location){
-                $scope.lat = location.coords.latitude;
-                $scope.lng = location.coords.longitude;
+                $scope.latlng.lat = location.coords.latitude;
+                $scope.latlng.lng = location.coords.longitude;
                 $scope.search();
             });
         }
@@ -66,7 +66,7 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
         autocomplete: true
     }));
 
-    L.control.locate().addTo(map);
+    $scope.controlLocate = L.control.locate().addTo(map);
 
 
     marker.addTo(map);
