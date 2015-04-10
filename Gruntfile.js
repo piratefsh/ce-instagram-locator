@@ -17,6 +17,7 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/angular-resource/angular-resource.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
                 ],
                 dest: 'assets/js/dist/dependencies.js'
             },
@@ -24,6 +25,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/normalize.css/normalize.css',
                     'bower_components/fontawesome/css/font-awesome.min.css',
+                    'bower_components/bootstrap/dist/css/bootstrap.min.css',
                 ],
                 dest: 'assets/css/dist/dependencies.css'
             },

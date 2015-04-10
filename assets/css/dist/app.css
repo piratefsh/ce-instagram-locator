@@ -35,44 +35,9 @@ h1, h2, h3, h4 {
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-.label, .btn, input, textarea {
+.label {
   color: #555555;
   text-transform: uppercase; }
-
-.btn {
-  text-decoration: none;
-  background-color: #eeeeee;
-  padding: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  font-weight: normal; }
-
-.btn-default {
-  font-size: 0.8em; }
-
-.btn-clean {
-  color: #888888;
-  background-color: transparent; }
-
-.btn-active-teal {
-  background-color: teal;
-  color: white; }
-
-.btn-active-blue {
-  background-color: teal;
-  color: white; }
-
-.btn-side {
-  padding: 10px;
-  margin: -10px;
-  margin-left: -5px;
-  float: right; }
-
-input, textarea {
-  font-size: 0.9em;
-  border: 1px solid transparent;
-  background-color: transparent;
-  border-bottom: 1px solid #bbb; }
 
 form {
   margin: 20px auto; }
@@ -81,69 +46,8 @@ form {
     margin: 20px auto;
     display: inline-block;
     padding: 10px; }
-  form input, form button {
-    padding: 10px; }
-  form button, form input[type='submit'] {
-    color: white;
-    border: none;
-    background-color: teal;
-    border-radius: 6.66667px; }
-
-.ui-checkbox {
-  width: 40px;
-  height: 16px;
-  background-color: #ddd;
-  margin: 0 10px;
-  border-radius: 20px;
-  position: relative;
-  display: inline-block; }
-  .ui-checkbox label {
-    display: block;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    top: -3px;
-    left: 0px;
-    background-color: #fbfbfb;
-    box-shadow: 2px 1px 1px 1px rgba(170, 170, 170, 0.3);
-    position: absolute;
-    cursor: pointer;
-    z-index: 2;
-    -moz-transition: background-color 0.3s ease-in-out, left 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out, left 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out, left 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out, left 0.3s ease-in-out; }
-    .ui-checkbox label:before {
-      background-color: transparent;
-      -moz-transition-delay: 0s;
-      -o-transition-delay: 0s;
-      -webkit-transition-delay: 0s;
-      transition-delay: 0s;
-      z-index: 1;
-      width: 40px;
-      height: 16px;
-      margin-right: 10px;
-      border-radius: 20px;
-      content: "";
-      display: block;
-      position: absolute;
-      top: 2px;
-      left: 0px; }
-    .ui-checkbox label.disabled {
-      background-color: #efefef; }
-  .ui-checkbox input[type='checkbox'] {
-    visibility: hidden; }
-    .ui-checkbox input[type='checkbox']:checked + label {
-      left: 20px;
-      background-color: teal;
-      box-shadow: -1px 1px 1px 1px rgba(170, 170, 170, 0.4); }
-      .ui-checkbox input[type='checkbox']:checked + label:before {
-        -moz-transition-delay: 0.3s;
-        -o-transition-delay: 0.3s;
-        -webkit-transition-delay: 0.3s;
-        transition-delay: 0.3s;
-        background-color: rgba(0, 128, 128, 0.4);
-        left: -20px; }
+    form fieldset label {
+      display: block; }
 
 .loading-indicator {
   padding: 20px 0px;
