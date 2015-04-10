@@ -33,8 +33,7 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
         // find user location
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(location){
-                $scope.latlng.lat = location.coords.latitude;
-                $scope.latlng.lng = location.coords.longitude;
+                $scope.latlng = L.latLng(location.coords.latitude, location.coords.longitude);
                 if($scope.marker) $scope.marker.setLatLng($scope.latlng);
                 map.setView($scope.latlng);
                 $scope.search();
@@ -45,8 +44,8 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
 
     $scope.getMyLocation();
 
-    $interval($scope.search, 60000)
     $scope.search();
+    $interval($scope.search, 60000)
 
     // Map stuff
     L.mapbox.accessToken = "pk.eyJ1IjoicGlyYXRlZnNoIiwiYSI6IjlNT2dMUGcifQ.cj4j9z29wjkXPAi7nK7ArA";
