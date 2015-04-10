@@ -25,7 +25,8 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
             lng: $scope.latlng.lng
         }).$promise.then(function(response){
             $scope.posts = response.data
-        })
+        });
+
     }
 
     $scope.getMyLocation = function(){
@@ -34,9 +35,12 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
             navigator.geolocation.getCurrentPosition(function(location){
                 $scope.latlng.lat = location.coords.latitude;
                 $scope.latlng.lng = location.coords.longitude;
+                if($scope.marker) $scope.marker.setLatLng($scope.latlng);
+                map.setView($scope.latlng);
                 $scope.search();
             });
         }
+
     }
 
     $scope.getMyLocation();
@@ -52,12 +56,12 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
     map.setView($scope.latlng, 10);
 
     // create marker
-    var marker = L.marker($scope.latlng, {
+    $scope.marker = L.marker($scope.latlng, {
     });
 
     map.on('click', function(e){
         map.setView(e.latlng);
-        marker.setLatLng(e.latlng);
+        $scope.marker.setLatLng(e.latlng);
         $scope.latlng = e.latlng;
         $scope.search();
     })
@@ -69,5 +73,5 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
     $scope.controlLocate = L.control.locate().addTo(map);
 
 
-    marker.addTo(map);
+    $scope.marker.addTo(map);
 }]);

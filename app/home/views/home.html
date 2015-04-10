@@ -32,9 +32,9 @@
     </div>
     <ul class="list-feature">
         <li ng-repeat="post in posts">
-            <img ng-src="{{post.images.standard_resolution.url}}"/>
+        <a class="image" href="{{post.link}}"><img ng-src="{{post.images.standard_resolution.url}}"/></a>
             <p>
-                <small>{{post.created_time*1000 | date:'dd MMM, yyyy - hh:mm a' }}</small>
+                <small>{{post.created_time*1000 | date:'dd MMM, yyyy - hh:mm a' }} by {{post.user.username}}</small><br/>
                 {{post.caption.text}}
             </p>
         </li>

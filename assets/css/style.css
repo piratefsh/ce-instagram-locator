@@ -82,11 +82,14 @@ form {
     display: block;
     clear: both; }
   .list-feature li {
-    height: 600px;
+    height: 450px;
+    overflow-y: scroll;
     width: 31.66667%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
+    .list-feature li .image {
+      display: block; }
     .list-feature li img {
       max-width: 100%;
       border: 1px solid #bbb; }
