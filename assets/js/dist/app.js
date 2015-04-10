@@ -34,8 +34,7 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
   $scope.now = new Date();
   var uri = "https://api.instagram.com/v1/media/search"
 
-  $scope.lat = "3.133792";
-  $scope.lng = "101.686116";
+  $scope.latlng = L.latLng("3.133792", "101.686116");
 
   var Posts = $resource(uri, {
         callback: "JSON_CALLBACK"
@@ -54,8 +53,8 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
 
     $scope.search = function(){
         Posts.getPosts({
-            lat: $scope.lat,
-            lng: $scope.lng
+            lat: $scope.latlng.lat,
+            lng: $scope.latlng.lng
         }).$promise.then(function(response){
             $scope.posts = response.data
         })
@@ -75,4 +74,23 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
     $scope.getMyLocation();
     $scope.search();
 
+    // Map stuff
+    L.mapbox.accessToken = "pk.eyJ1IjoicGlyYXRlZnNoIiwiYSI6IjlNT2dMUGcifQ.cj4j9z29wjkXPAi7nK7ArA";
+
+    // create map
+    var map = L.mapbox.map('map', 'piratefsh.lmhc5pck');
+    map.setView($scope.latlng, 10);
+
+    // create marker
+    var marker = L.marker($scope.latlng, {
+    });
+
+    map.on('click', function(e){
+        map.setView(e.latlng);
+        marker.setLatLng(e.latlng);
+        $scope.latlng = e.latlng;
+        $scope.search();
+    })
+
+    marker.addTo(map);
 }]);

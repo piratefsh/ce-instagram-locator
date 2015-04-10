@@ -1,25 +1,32 @@
 <h1>Instagrams Around You</h1>
-<form>
-    <fieldset>
-        <label>Latitude: </label><input ng-model="lat"/>
-    </fieldset>
+<div class="col-md-3">
+    <form>
+        <div id="map"></div>
+        <fieldset>
+            <label>Latitude:</label>
+            <input ng-model="latlng.lat"/>
+        </fieldset>
 
-    <fieldset>
-        <label>Longitude: </label><input ng-model="lng"/>
-    </fieldset>
-    <fieldset>
-        <button class="btn btn-default" ng-click="getMyLocation()">Around Me</button>
-    </fieldset>
-    <fieldset>
-        <input class="btn btn-primary" type="submit" ng-click="search()" value="Go"/>
-    </fieldset>
-</form>
-<ul class="list-feature">
-    <li ng-repeat="post in posts">
-        <img ng-src="{{post.images.standard_resolution.url}}"/>
-        <p>
-            <small>{{post.created_time*1000 | date:'dd MMM, yyyy - hh:mm a' }}</small>
-            {{post.caption.text}}
-        </p>
-    </li>
-</ul>
+        <fieldset>
+            <label>Longitude:</label>
+            <input ng-model="latlng.lng"/>
+        </fieldset>
+        <fieldset>
+            <button class="btn btn-default" ng-click="getMyLocation()">Around Me</button>
+        </fieldset>
+        <fieldset>
+            <input class="btn btn-primary" type="submit" ng-click="search()" value="Go"/>
+        </fieldset>
+    </form>
+</div>
+<div class="col-md-9">
+    <ul class="list-feature">
+        <li ng-repeat="post in posts">
+            <img ng-src="{{post.images.standard_resolution.url}}"/>
+            <p>
+                <small>{{post.created_time*1000 | date:'dd MMM, yyyy - hh:mm a' }}</small>
+                {{post.caption.text}}
+            </p>
+        </li>
+    </ul>
+</div>
