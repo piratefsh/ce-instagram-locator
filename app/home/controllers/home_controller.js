@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('HomeController', ['$scope', '$resource', function($scope, $resource){
+angular.module('app.controllers').controller('HomeController', ['$scope', '$resource', '$interval', function($scope, $resource, $interval){
   $scope.now = new Date();
   var uri = "https://api.instagram.com/v1/media/search"
 
@@ -40,6 +40,8 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
     }
 
     $scope.getMyLocation();
+
+    $interval($scope.search, 60000)
     $scope.search();
 
     // Map stuff
@@ -59,6 +61,13 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
         $scope.latlng = e.latlng;
         $scope.search();
     })
+
+    map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+        autocomplete: true
+    }));
+
+    L.control.locate().addTo(map);
+
 
     marker.addTo(map);
 }]);

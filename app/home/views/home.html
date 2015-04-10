@@ -1,4 +1,11 @@
-<h1>Instagrams Around You</h1>
+<div class="col-md-12">
+    <h1>Instagrams Around You</h1>
+    <p>
+        If you've ever wondered what people in different places are up to. Mini-project by
+        <a href="http://twitter.com/piratefsh">Sher Minn</a>
+        .
+    </p>
+</div>
 <div class="col-md-3">
     <form>
         <div id="map"></div>
@@ -20,6 +27,9 @@
     </form>
 </div>
 <div class="col-md-9">
+    <div ng-hide="posts.length">
+        <p>No Instagrammers around here!</p>
+    </div>
     <ul class="list-feature">
         <li ng-repeat="post in posts">
             <img ng-src="{{post.images.standard_resolution.url}}"/>
