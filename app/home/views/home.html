@@ -8,18 +8,16 @@
 </div>
 <div class="col-md-3">
     <form>
-        <div id="map"></div>
+        <div id="map" class="map" ng-class="{'big-map': bigMap, 'map': true}"></div>
+        <fieldset>
+            <button class="btn btn-default" ng-click="getMyLocation()">Around Me</button>
+            <button class="btn btn-default" ng-click="toggleMapSize()">Expand/Collapse Map</button>
+        </fieldset>
         <fieldset>
             <label>Latitude:</label>
             <input ng-model="latlng.lat"/>
-        </fieldset>
-
-        <fieldset>
             <label>Longitude:</label>
             <input ng-model="latlng.lng"/>
-        </fieldset>
-        <fieldset>
-            <button class="btn btn-default" ng-click="getMyLocation()">Around Me</button>
         </fieldset>
         <fieldset>
             <input class="btn btn-primary" type="submit" ng-click="search()" value="Go"/>

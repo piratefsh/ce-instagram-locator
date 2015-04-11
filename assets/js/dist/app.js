@@ -30,7 +30,7 @@ angular.module('app.directives').directive('loadingIndicator',['$window', '$loca
         }
     }
 }]);
-angular.module('app.controllers').controller('HomeController', ['$scope', '$resource', '$interval', function($scope, $resource, $interval){
+angular.module('app.controllers').controller('HomeController', ['$scope', '$resource', '$interval', '$timeout', function($scope, $resource, $interval, $timeout){
   $scope.now = new Date();
   var uri = "https://api.instagram.com/v1/media/search"
 
@@ -73,6 +73,15 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
             });
         }
 
+    }
+
+    $scope.bigMap = false;
+
+    $scope.toggleMapSize = function(){
+        $scope.bigMap = !$scope.bigMap;
+        $timeout(function(){
+            map.invalidateSize();
+        }, 400);
     }
 
     $scope.getMyLocation();
