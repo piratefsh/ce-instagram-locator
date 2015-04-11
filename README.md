@@ -2,6 +2,8 @@
 
 Simple app to find Instagram posts around a place. Ever wondered what people in Kuala Lumpur, Malaysia are up to right now?
 
+**[CHECK OUT THE DEMO](http://piratefsh.github.io/ce-instagram-locator/#/)**
+
 ## Built with
 
 * AngularJS (including angular-route)
