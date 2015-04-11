@@ -93,7 +93,7 @@ angular.module('app.controllers').controller('HomeController', ['$scope', '$reso
 
     // create map
     var map = L.mapbox.map('map', 'piratefsh.lmhc5pck');
-    map.setView($scope.latlng, 10);
+    map.setView($scope.latlng, 13);
 
     // create marker
     $scope.marker = L.marker($scope.latlng, {
